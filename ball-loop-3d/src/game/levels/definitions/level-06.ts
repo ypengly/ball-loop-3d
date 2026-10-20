@@ -1,0 +1,32 @@
+import type { LevelDefinition } from '../levelTypes'
+
+export const level06: LevelDefinition = {
+  id: 'sky-bridge',
+  name: 'Sky Bridge',
+  subtitle: 'Long, narrow, and very high',
+  difficulty: 3,
+  objective: 'Cross the long elevated bridges without falling.',
+  tip: 'Look ahead, not at the ball. Gentle steering inputs keep you centred on the narrow planks.',
+  parTime: 52,
+  challenge: 'fastTime',
+  expertTime: 40,
+  segments: [
+    { t: 'start', length: 14 },
+    { t: 'ramp', length: 16, rise: 6, width: 4 },
+    { t: 'bridge', length: 44, width: 2.4, features: [{ k: 'checkpoint', at: 0.08 }, { k: 'gems', from: 0.2, to: 0.9, count: 6 }] },
+    { t: 'straight', length: 8, width: 5 },
+    { t: 'curve', angle: -90, radius: 18, width: 3.2, features: [{ k: 'gems', from: 0.25, to: 0.75, count: 3 }] },
+    { t: 'bridge', length: 36, width: 2.2, features: [{ k: 'gems', from: 0.15, to: 0.85, count: 5 }] },
+    { t: 'gap', length: 5 },
+    { t: 'straight', length: 10, width: 4, features: [{ k: 'checkpoint', at: 0.3 }] },
+    { t: 'ramp', length: 14, rise: 5, width: 3.6 },
+    { t: 'bridge', length: 40, width: 2.2, features: [{ k: 'slow', at: 0.5, length: 8 }, { k: 'gems', from: 0.2, to: 0.9, count: 5 }] },
+    { t: 'curve', angle: 90, radius: 18, width: 3.2, features: [{ k: 'gem', at: 0.5 }] },
+    { t: 'launch', length: 9, rise: 2.4, width: 4 },
+    { t: 'gap', length: 7, drop: 1 },
+    { t: 'straight', length: 12, width: 5, features: [{ k: 'checkpoint', at: 0.3 }] },
+    { t: 'ramp', length: 16, rise: -7, width: 4 },
+    { t: 'bridge', length: 30, width: 2.2, features: [{ k: 'gems', from: 0.2, to: 0.9, count: 4 }] },
+    { t: 'finish' },
+  ],
+}

@@ -1,0 +1,31 @@
+import type { LevelDefinition } from '../levelTypes'
+
+export const level08: LevelDefinition = {
+  id: 'falling-floor',
+  name: 'Falling Floor',
+  subtitle: 'Do not stop rolling',
+  difficulty: 4,
+  objective: 'Cross the crumbling floors before they drop away.',
+  tip: 'Orange tiles fall shortly after you touch them. Keep your speed up and never turn back.',
+  parTime: 44,
+  challenge: 'allGems',
+  segments: [
+    { t: 'start', length: 14 },
+    { t: 'straight', length: 10 },
+    { t: 'falling', tiles: 6, delay: 0.9, width: 5 },
+    { t: 'straight', length: 10, features: [{ k: 'checkpoint', at: 0.4 }, { k: 'gem', at: 0.5 }] },
+    { t: 'falling', tiles: 5, delay: 0.7, width: 4.4 },
+    { t: 'gap', length: 4 },
+    { t: 'falling', tiles: 4, delay: 0.7, width: 4.4 },
+    { t: 'straight', length: 10, features: [{ k: 'checkpoint', at: 0.4 }, { k: 'gem', at: 0.5 }] },
+    { t: 'falling', tiles: 8, delay: 0.55, width: 4, vanish: true },
+    { t: 'straight', length: 10, features: [{ k: 'gem', at: 0.5 }] },
+    { t: 'launch', length: 8, rise: 2, width: 5 },
+    { t: 'gap', length: 5, drop: 0.5 },
+    { t: 'falling', tiles: 6, delay: 0.55, width: 4.4 },
+    { t: 'straight', length: 10, features: [{ k: 'checkpoint', at: 0.4 }, { k: 'gem', at: 0.5 }] },
+    { t: 'falling', tiles: 10, delay: 0.5, width: 4, vanish: true },
+    { t: 'straight', length: 8, features: [{ k: 'gems', from: 0.2, to: 0.8, count: 2 }] },
+    { t: 'finish' },
+  ],
+}

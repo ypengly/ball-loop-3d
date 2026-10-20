@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, sans-serif;
+  --color-ink: #0b1230;
+  --color-panel: rgba(12, 20, 54, 0.72);
+  --color-cyan: #2fd8ff;
+  --color-magenta: #ff4fd8;
+  --color-gold: #ffc83d;
+  --color-mint: #35ff9a;
+  --color-danger: #ff3b4a;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #0b1230;
+  color: #eaf0ff;
+  font-family: var(--font-display);
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body { overflow: hidden; position: fixed; inset: 0; width: 100%; }
+
+.glass {
+  background: var(--color-panel);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(160, 190, 255, 0.18);
+  box-shadow: 0 10px 40px rgba(2, 6, 30, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.title-grad {
+  background: linear-gradient(180deg, #ffffff 0%, #bfe6ff 55%, #5fb4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pop-in { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes star-pop { 0% { transform: scale(0) rotate(-40deg); } 70% { transform: scale(1.25) rotate(8deg); } 100% { transform: scale(1) rotate(0); } }
+@keyframes pulse-soft { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }
+
+.anim-pop { animation: pop-in 0.28s ease-out both; }
+.anim-fade { animation: fade-in 0.25s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-pop, .anim-fade { animation: none; }
+}
+
+input[type="range"] { accent-color: var(--color-cyan); }
+
+*:focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 2px; border-radius: 8px; }
+
+.safe-pad {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}

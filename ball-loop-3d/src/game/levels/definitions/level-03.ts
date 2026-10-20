@@ -1,0 +1,30 @@
+import type { LevelDefinition } from '../levelTypes'
+
+export const level03: LevelDefinition = {
+  id: 'jump-start',
+  name: 'Jump Start',
+  subtitle: 'Time your jumps across the gaps',
+  difficulty: 2,
+  objective: 'Jump the gaps. Press Space just before the edge.',
+  tip: 'Press Space (or the jump button) right at the edge. You can still jump a moment after leaving the platform.',
+  parTime: 30,
+  challenge: 'allGems',
+  segments: [
+    { t: 'start', length: 14 },
+    { t: 'straight', length: 14, features: [{ k: 'gems', from: 0.3, to: 0.8, count: 3 }] },
+    { t: 'gap', length: 4 },
+    { t: 'straight', length: 12, features: [{ k: 'gem', at: 0.5 }] },
+    { t: 'gap', length: 5.5 },
+    { t: 'straight', length: 14, features: [{ k: 'checkpoint', at: 0.4 }] },
+    { t: 'launch', length: 9, rise: 2.4, features: [{ k: 'gems', from: 0.4, to: 0.9, count: 3 }] },
+    { t: 'gap', length: 7, drop: 1 },
+    { t: 'straight', length: 12, width: 5, features: [{ k: 'gems', from: 0.2, to: 0.8, count: 3 }] },
+    { t: 'gap', length: 4 },
+    { t: 'straight', length: 6, width: 4 },
+    { t: 'gap', length: 4.5 },
+    { t: 'straight', length: 6, width: 4, features: [{ k: 'checkpoint', at: 0.5 }] },
+    { t: 'gap', length: 5 },
+    { t: 'straight', length: 14, features: [{ k: 'gem', at: 0.5 }] },
+    { t: 'finish' },
+  ],
+}

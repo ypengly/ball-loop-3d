@@ -1,0 +1,32 @@
+import type { LevelDefinition } from '../levelTypes'
+
+export const level09: LevelDefinition = {
+  id: 'speed-circuit',
+  name: 'Speed Circuit',
+  subtitle: 'Boosts, banks and loops at full tilt',
+  difficulty: 4,
+  objective: 'Chain the boosts, ride the banked turns and clear the double loop.',
+  tip: 'Green pads add speed. Banked turns hold you in: lean into them, and keep your nerve on the loops.',
+  parTime: 62,
+  challenge: 'fastTime',
+  expertTime: 50,
+  segments: [
+    { t: 'start', length: 14 },
+    { t: 'straight', length: 36, width: 7, features: [{ k: 'boost', at: 0.6, strength: 20 }, { k: 'gems', from: 0.65, to: 0.95, count: 3 }] },
+    { t: 'curve', angle: 180, radius: 20, width: 9, bank: 22, rails: true, features: [{ k: 'gems', from: 0.2, to: 0.8, count: 5, lat: -2.5 }] },
+    { t: 'straight', length: 36, width: 7, features: [{ k: 'checkpoint', at: 0.1 }, { k: 'boost', at: 0.88, strength: 24 }] },
+    { t: 'loop', radius: 5.5, features: [{ k: 'gem', at: 0.5, h: -0.2 }] },
+    { t: 'straight', length: 14, width: 6, features: [{ k: 'gems', from: 0.2, to: 0.8, count: 3 }] },
+    { t: 'halfpipe', length: 28, width: 10, features: [{ k: 'boost', at: 0.5, strength: 19 }, { k: 'gems', from: 0.2, to: 0.9, count: 4, lat: 3.8, h: 0.4 }] },
+    { t: 'straight', length: 8, width: 6, features: [{ k: 'checkpoint', at: 0.3 }] },
+    { t: 'curve', angle: -120, radius: 18, width: 9, bank: 20, rails: true, features: [{ k: 'gems', from: 0.2, to: 0.8, count: 4, lat: 2.5 }] },
+    { t: 'straight', length: 18, width: 6, features: [{ k: 'slow', at: 0.5, length: 9 }, { k: 'gem', at: 0.5 }] },
+    { t: 'straight', length: 8, width: 6 },
+    { t: 'launch', length: 10, rise: 2.6, width: 6, features: [{ k: 'boost', at: 0.3, strength: 18 }] },
+    { t: 'gap', length: 10, drop: 1.5 },
+    { t: 'straight', length: 36, width: 6, features: [{ k: 'checkpoint', at: 0.05 }, { k: 'boost', at: 0.9, strength: 24 }] },
+    { t: 'loop', radius: 6, features: [{ k: 'gem', at: 0.5, h: -0.2 }] },
+    { t: 'straight', length: 18, width: 6, features: [{ k: 'gems', from: 0.2, to: 0.8, count: 3 }] },
+    { t: 'finish' },
+  ],
+}
